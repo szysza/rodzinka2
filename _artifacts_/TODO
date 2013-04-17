@@ -1,0 +1,26 @@
+    [
+        TODO DLA TEGO MILESTONEA:
+
+        * Dokończyć CRUDA dla pewnych zasobów, np. dla Album
+        * Naprawić zatwierdzanie zaproszeń
+    ]
+
+
+* Jakaś norma, czy trzymamy nulle, czy puste ciagi znaków
+
+* Wyszukać pozostałości po kontrolerze AlbumsController, np. 'albums_path'
+
+* Testy (szczególnie funkcjonalne)
+
+REGUŁY:
+* Do swojej rodziny można dodawać albumy bez ograniczeń
+
+Transakcje!!!
+
+*** Inne zachowanie przyciskow przy dodawaniu do znajomych:
+- po kliknieciu "Dodaj do Rodzna Bąków" zmina napisu na coś jak "Zaproszono do Rodziny Bąków"
+    (przy impl uzyć ukrytych pól z nazwą rodziny?)
+- to samo przy potwierdzeniu/odrzuceniu zaproszenia
+
+Czy obsługa zaproszeń jest dobrze zaprojektowana w kodzie
+(chodzi także o dodawanie użytkownika do rodziny na podstwie akkceptacji zaproszenia)?

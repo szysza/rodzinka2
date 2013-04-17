@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <tbody>
+    <% @albums.each_slice(4) do |row| %>
+        <tr>
+            <% row.each do |album| %>
+
+               <br>
+               <%= album.name %>
+            <% end %>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+    <%#= link_to 'Edit', edit_album_path(album) %>
+    <%#= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<br />
+
+<% if @current_user == @user %>
+    <%= link_to 'New Album', new_user_user_album_path(@current_user), :class => "btn btn-success" %>
+<% end %>

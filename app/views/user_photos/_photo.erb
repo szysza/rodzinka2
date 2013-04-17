@@ -1,0 +1,4 @@
+<p>
+  <%= link_to raw("<img src='#{photo.image.url(:thumb)}' />"),
+              user_user_album_user_photo_path(@user, @album, photo) %>
+</p>

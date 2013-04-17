@@ -1,0 +1,3 @@
+* Czy gdziekolwiek powinienem tworzyć instance modelu w ten sposób @current_user.some_models.build?
+  Argumentem na nie jest to, że layout może gdzieś wywołać
+  metodę @current_user.some_models dostając błędne wartości!

@@ -1,0 +1,13 @@
+<% @albums.each do |album| %>
+    <p><%= family_album_thumb(album) %></p>
+
+    <%#= link_to 'Edit', edit_album_path(album) %>
+    <%#= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<br />
+
+<%# TODO: Poniższy if. Ładnie? Efektywnie? %>
+<% if @current_user.families.include?(@family) %>
+    <%= link_to 'New Album', new_family_family_album_path(@family) %>
+<% end %>

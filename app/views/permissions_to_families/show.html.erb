@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @permissions_to_family.user %>
+</p>
+
+<p>
+  <b>Family:</b>
+  <%= @permissions_to_family.family %>
+</p>
+
+
+<%= link_to 'Edit', edit_permissions_to_family_path(@permissions_to_family) %> |
+<%= link_to 'Back', permissions_to_families_path %>

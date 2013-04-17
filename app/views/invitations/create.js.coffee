@@ -1,0 +1,1 @@
+$('#<%= invite_html_id(@invitation) %>').css('display', 'none')

@@ -1,0 +1,16 @@
+User email:string password:string first_name:string last_name:string gender:string birthdate:date description:text
+# brak salt
+# birthdate czy birth_date?
+
+Album name:string description:text visibility:string owner:references
+# typ description, text?
+
+Photo name:string description:text
+# + recznie dodane w wygenerowanej migracji image
+
+Family name:string description:text
+
+PermissionsToFamily user:references family:references
+# + admin:boolean - chyba, że zrobić bardziej złożone
+
+Invitation accepted:boolean recipient:references sender:references family:references

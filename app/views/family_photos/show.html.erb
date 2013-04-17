@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <img src="<%= @photo.image.url(:normal) %>" />
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @photo.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @photo.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_family_family_album_family_photo_path(@family, @album, @photo) %> |
+<%= link_to 'Back', family_family_album_path(@family, @album) %>

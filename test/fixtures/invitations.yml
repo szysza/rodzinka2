@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  accepted: false
+  recipient: 
+  sender: 
+  family: 
+
+two:
+  accepted: false
+  recipient: 
+  sender: 
+  family: 

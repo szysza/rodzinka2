@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<% @invitations.each do |invitation| %>
+    <div id="<%= invite_html_id(invitation) %>" class="invite">
+      <%= form_for([invitation.family, invitation], remote: true, namespace: invitation.family.id) do |f| %>
+          <%= f.hidden_field :recipient_id %>
+          <%= f.hidden_field :family_id %>
+          <%= f.submit "Dodaj do rodziny: #{invitation.family.name}" %>
+      <% end %>
+    </div>
+<% end %>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%# TODO: Ładne wyświetlanie płci. Wydzielić? Do helpera? Do modelu?  %>
+  <%= @user.gender %>
+</p>
+
+<p>
+  <%= link_to 'Albumy', user_user_albums_path(@user) %>
+</p>
+
+
+<%#= link_to 'Edit', edit_user_path(@user) %> <!--|-->
+<%#= link_to 'Back', users_path %>

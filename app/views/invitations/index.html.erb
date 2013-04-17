@@ -1,0 +1,17 @@
+<h1>Listing invitations</h1>
+
+<table>
+  <tr>
+    <th>Accepted</th>
+    <th>Recipient</th>
+    <th>Sender</th>
+  </tr>
+
+<% @invitations.each do |invitation| %>
+  <tr>
+    <td><%= invitation.accepted %></td>
+    <td><%= invitation.recipient.name %></td>
+    <td><%= invitation.sender.name %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,9 @@
+User email:string password:string first_name:string last_name:string gender:string birthdate:date description:text
+# brak salt
+# birthdate czy birth_date?
+
+Album name:string description:text visibility:string album_owner:references
+# typ description, text?
+
+Photo name:string description:text
+# + recznie dodane w migracji image 

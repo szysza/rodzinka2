@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @album.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @album.description %>
+</p>
+
+<p>
+  <b>Visibility:</b>
+  <%= @album.visibility %>
+</p>
+
+<p>
+  <b>Album owner:</b>
+  <%= @album.owner.name %>
+</p>
+
+<table class="table table-striped">
+  <tbody>
+  <% @albums.photo.each_slice(4) do |row| %>
+      <tr>
+        <% row.each do |photo| %>
+
+            <br>
+            <%= photo.name %>
+        <% end %>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to raw("<img src='#{album.image.url(:thumb)}' />"),
+#<%= render partial: 'user_photos/photo', collection: @album.photos %>
+
+<%= link_to 'Edit', edit_user_user_album_path(@current_user, @album), :class => "btn btn-primary" %>
+<%= link_to 'Back', user_user_albums_path(@user), :class => " btn btn-primary" %>
+<%= link_to 'New image', new_user_user_album_user_photo_path(@current_user, @album), :class => "btn btn-success" %>
+<%= link_to 'Delete', user_user_album_path(@current_user, @album), :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :method => "delete", :class => " btn btn-danger" %>

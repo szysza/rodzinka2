@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @album.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @album.description %>
+</p>
+
+<p>
+  <b>Visibility:</b>
+  <%= @album.visibility %>
+</p>
+
+<p>
+  <b>Album owner:</b>
+  <%= @album.owner.name %>
+</p>
+
+<%= render partial: 'family_photos/photo', collection: @album.photos %>
+
+<%= link_to 'Edit', edit_family_family_album_path(@family, @album) %> |
+<%= link_to 'Back', family_family_albums_path(@family) %> |
+<%= link_to 'Dodaj zdjęcie', new_family_family_album_family_photo_path(@family, @album) %>

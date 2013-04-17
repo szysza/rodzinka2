@@ -1,0 +1,13 @@
+<% @invitations.each_with_index do |invitation, i| %>
+    <%# TODO: rodzina i przyciski w jednym wierszu %>
+    <div id="<%= invitation_html_id(invitation) %>" class="invitation">
+      <%= invitation.family.name %>
+      <%= form_for([invitation.family, invitation], method: :put, remote: true, namespace: "p#{invitation.id}") do |f| %>
+        <%= f.submit 'Potwierdź', class: 'confirm_invitation_button' %>
+      <% end %>
+
+      <%= form_for([invitation.family, invitation], method: :delete, remote: true, namespace: "d#{invitation.id}") do |f| %>
+          <%= f.submit 'Odrzuć', class: 'refuse_invitation_button' %>
+      <% end %>
+    </div>
+<% end %>
