@@ -12,6 +12,26 @@
   end
 =end
 
+   def index
+     @users = User.all
+
+     respond_to do |format|
+       format.html # index.html.erb
+       format.json { render json: @users }
+     end
+   end
+
+   def index
+     @q = User.search(params[:q])
+     @users = @q.result(:distinct => true)
+
+     respond_to do |format|
+       format.html # index.html.erb
+       format.js
+       format.json { render json: @users }
+     end
+   end
+
   def show
     @user = User.find(params[:id])
     @invitations = @current_user.build_invitations_for(@user)

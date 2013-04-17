@@ -13,13 +13,13 @@
   <tr>
     <td><%= permissions_to_family.user %></td>
     <td><%= permissions_to_family.family %></td>
-    <td><%= link_to 'Show', permissions_to_family %></td>
-    <td><%= link_to 'Edit', edit_permissions_to_family_path(permissions_to_family) %></td>
-    <td><%= link_to 'Destroy', permissions_to_family, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', permissions_to_family, :class => "btn btn-primary"%></td>
+    <td><%= link_to 'Edit', edit_permissions_to_family_path(permissions_to_family), :class => "btn btn-primary" %></td>
+    <td><%= link_to 'Destroy', permissions_to_family, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Permissions to family', new_permissions_to_family_path %>
+<%= link_to 'New Permissions to family', new_permissions_to_family_path , :class => "btn btn-success"%>

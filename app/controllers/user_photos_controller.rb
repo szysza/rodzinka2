@@ -8,9 +8,6 @@ class UserPhotosController < ApplicationController
   end
 =end
 
-  before_filter :set_album
-  before_filter :set_current_user_album
-
   def show
     @user = User.find(params[:user_id])
     @album = @user.albums.find(params[:user_album_id])
@@ -25,7 +22,9 @@ class UserPhotosController < ApplicationController
   end
 
   def edit
-    @photo = @cu_album.photos.find(params[:id])
+    @user = User.find(params[:user_id])
+    @album = @user.albums.find(params[:user_album_id])
+    @photo = @album.photos.find(params[:id])
   end
 
 =begin
@@ -49,7 +48,9 @@ class UserPhotosController < ApplicationController
   end
 
   def update
-    @photo = @cu_album.photos.find(params[:id])
+    @user = User.find(params[:user_id])
+    @album = @user.albums.find(params[:user_album_id])
+    @photo = @album.photos.find(params[:id])
 
     respond_to do |format|
       if @photo.update_attributes(params[:photo])
@@ -72,10 +73,6 @@ class UserPhotosController < ApplicationController
       format.html { redirect_to user_user_album_url(current_user, @cu_album) }
       format.json { head :no_content }
     end
-  end
-
-  def set_current_user_album
-    @cu_album = current_user.albums.find(params[:album_id])
   end
 
 =begin

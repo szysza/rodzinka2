@@ -22,7 +22,7 @@ Rodzinka::Application.routes.draw do
   end
 
 
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :index] do
     resources :user_albums, path: 'albums' do
       resources :user_photos, path: 'photos', except: [:index]
     end

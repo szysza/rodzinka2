@@ -37,10 +37,10 @@
         <ul class="nav">
           <% if @current_user %>
               <li>User: <%= @current_user.email %></li>
-              <li><%= button_to 'Wyloguj', logout_path, method: :delete %></li>
+              <li><%= button_to 'Log out', logout_path, method: :delete %></li>
 
-              <li><%= link_to 'Profil', @current_user %></li>
-              <li><%= link_to 'Zaproszenia', profile_invitations_path %></li>
+              <li><%= link_to 'Profile', @current_user %></li>
+              <li><%= link_to 'Invitations', profile_invitations_path %></li>
 
               <h3>Rodziny:</h3>
               <div class="family_links">
@@ -50,9 +50,9 @@
                 <% end %>
               </div>
 
-              <li><p><%= link_to 'Utwórz', new_family_path %></p></li>
+              <li><p><%= link_to 'Create', new_family_path %></p></li>
           <% else %>
-              <li><%= link_to 'Zaloguj', login_path %></li>
+              <li><%= link_to 'Log in', login_path %></li>
           <% end %>
         </ul>
       </div><!--/.nav-collapse -->
@@ -72,8 +72,8 @@
         <h3>Sidebar</h3>
         <ul class="nav nav-list">
           <li class="nav-header">Sidebar</li>
-          <li><%= link_to "Moje albumy", user_user_albums_path(@current_user)  %></li>
-          <li><%= link_to "Link2", "/path2"  %></li>
+          <li><%= link_to "My albums", user_user_albums_path(@current_user)  %></li>
+          <li><%= link_to "Users", users_path  %></li>
           <li><%= link_to "Link3", "/path3"  %></li>
         </ul>
       </div><!--/.well -->

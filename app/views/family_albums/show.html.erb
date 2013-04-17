@@ -22,6 +22,6 @@
 
 <%= render partial: 'family_photos/photo', collection: @album.photos %>
 
-<%= link_to 'Edit', edit_family_family_album_path(@family, @album) %> |
-<%= link_to 'Back', family_family_albums_path(@family) %> |
-<%= link_to 'Dodaj zdjęcie', new_family_family_album_family_photo_path(@family, @album) %>
+<%= link_to 'Edit', edit_family_family_album_path(@family, @album), :class => "btn btn-primary" %> |
+<%= link_to 'Back', family_family_albums_path(@family), :class => "btn btn-primary" %> |
+<%= link_to 'Add image', new_family_family_album_family_photo_path(@family, @album), :class => "btn btn-success" %>

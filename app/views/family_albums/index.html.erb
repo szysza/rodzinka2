@@ -9,5 +9,5 @@
 
 <%# TODO: Poniższy if. Ładnie? Efektywnie? %>
 <% if @current_user.families.include?(@family) %>
-    <%= link_to 'New Album', new_family_family_album_path(@family) %>
+    <%= link_to 'New Album', new_family_family_album_path(@family), :class => "btn btn-success"%>
 <% end %>

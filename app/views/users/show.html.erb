@@ -5,7 +5,7 @@
       <%= form_for([invitation.family, invitation], remote: true, namespace: invitation.family.id) do |f| %>
           <%= f.hidden_field :recipient_id %>
           <%= f.hidden_field :family_id %>
-          <%= f.submit "Dodaj do rodziny: #{invitation.family.name}" %>
+          <%= f.submit "Add to family: #{invitation.family.name}" %>
       <% end %>
     </div>
 <% end %>
@@ -32,7 +32,7 @@
 </p>
 
 <p>
-  <%= link_to 'Albumy', user_user_albums_path(@user) %>
+  <%= link_to 'Albums', user_user_albums_path(@user), :class => "btn btn-primary" %>
 </p>
 
 

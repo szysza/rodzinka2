@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <b>Image:</b>
+  <%= image_tag @album.image %>
+</p>
+
+<p>
   <b>Description:</b>
   <%= @album.description %>
 </p>
@@ -20,12 +25,17 @@
   <%= @album.owner.name %>
 </p>
 
+
+<p>
+  <b>Album photos:</b>
+</p>
+
 <table class="table table-striped">
   <tbody>
-  <% @albums.photo.each_slice(4) do |row| %>
+  <% @album.photos.each_slice(4) do |row| %>
       <tr>
         <% row.each do |photo| %>
-
+            <%= link_to image_tag(photo.image.thumb), user_user_album_user_photo_path(@user,@album,photo) %>
             <br>
             <%= photo.name %>
         <% end %>
@@ -35,8 +45,8 @@
 </table>
 
 
-<%= link_to raw("<img src='#{album.image.url(:thumb)}' />"),
-#<%= render partial: 'user_photos/photo', collection: @album.photos %>
+<%#= link_to raw("<img src='#{album.image.url(:thumb)}' />"),
+<%#= render partial: 'user_photos/photo', collection: @album.photos %>
 
 <%= link_to 'Edit', edit_user_user_album_path(@current_user, @album), :class => "btn btn-primary" %>
 <%= link_to 'Back', user_user_albums_path(@user), :class => " btn btn-primary" %>

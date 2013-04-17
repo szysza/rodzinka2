@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @photo %> |
-<%= link_to 'Back', user_album_photos_path(@user, @album) %>
+<%= link_to 'Show', @photo, :class => "btn btn-primary"%> |
+<%= link_to 'Back', user_album_photos_path(@user, @album), :class => "btn btn-primary" %>

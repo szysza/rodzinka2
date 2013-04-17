@@ -1,0 +1,6 @@
+<div class="input-append">
+    <%= search_form_for @q, :remote => true do |f| %>
+        <%= f.text_field :email_cont, :class=>"span2" %>
+        <%= f.submit "Search", :class=> "btn" %>
+    <% end %>
+</div>
